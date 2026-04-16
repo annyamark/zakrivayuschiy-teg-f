@@ -13,13 +13,33 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  font-variation-settings: "wght" var(--font-weight-text);
-  background-image: var(--background-gradient);
-  background-size: cover;
-  background-attachment: fixed;
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+}
+
+.page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--gradient-width);
+  height: var(--gradient-height);
+  background-image: var(--background-gradient);
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.header,
+.main,
+.card,
+.save-button {
+  position: relative;
+  z-index: 1;
 }
 
 .header {
@@ -54,14 +74,16 @@
   flex-direction: column;
   align-items: flex-start;
   width: var(--content-width);
-  margin: 0 auto;
+  margin: 0 auto;  
+  background-color: #fff;
+  font-variation-settings: "wght" var(--font-weight-text);
   font-family: var(--main-font);
 }
 
 .card {
   margin-bottom: 50px;
   border: #000 2px solid; 
-  background-color: #fff;
+
   overflow: visible;
   overflow: hidden;
 }
@@ -85,9 +107,39 @@
 }
 
 .img {
+  display: block;
   border: #000 2px solid;
   width: clamp(371px, 100%, 696px);
   aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: right center;
+}
+
+.card__img {
+  position: relative;
+}
+
+.watermark {
+  position: absolute;
+  z-index: 1;
+  top: 25px;
+  right: 25px;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #000;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  text-shadow: 
+  -1px -1px 0 #fff,
+  -1px 1px 0 #fff,
+  1px -1px 0 #fff,
+  1px 1px 0 #fff;
+}
+
+@supports (-webkit-text-stroke: 1px #fff) {
+  .card__label {
+    -webkit-text-stroke: 1px #fff;
+    text-shadow: none; 
+  }
 }
