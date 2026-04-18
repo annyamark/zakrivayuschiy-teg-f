@@ -29,4 +29,8 @@
 
     /* img */
     --image-size: clamp(371px, 100%, 696px);
+
+    --heart-contour: #000;
+    --heart-accent: #FF0000;
+
 }
