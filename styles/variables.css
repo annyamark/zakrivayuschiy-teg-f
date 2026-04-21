@@ -10,7 +10,8 @@
     --background-gradient: 
     repeating-linear-gradient(to right, #d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px),
     repeating-linear-gradient(to bottom,  #d3d3d3 0px, #d3d3d3 2px, transparent 2px, transparent 4px),
-    linear-gradient(to bottom, #e7e7e7 0.01%, #e7e7e7 0.02%, #1a1a1a 100%);
+    linear-gradient(to bottom, #e7e7e7 0.01%, #e7e7e7 0.02%, #1a1a1a 100%),
+    linear-gradient(to bottom, #fff var(--gradient-height), transparent var(--gradient-height));
     --gradient-width: clamp(375px, 100%, 100%);
     --gradient-height: clamp(var(--content-width), 100vh, 100vh);
     
@@ -25,12 +26,11 @@
 
     /* title шрифт */
     --title-size: clamp(49px, calc(1.5vw + 43.37px), 65px);
-    --subtitle-size: clamp(14px, calc(0.85vw + 10.83px), 23px);
+    --subtitle-size: clamp(14px, calc(0.85vw + 10.81px), 23px);
 
     /* img */
     --image-size: clamp(371px, 100%, 696px);
 
     --heart-contour: #000;
     --heart-accent: #FF0000;
-
 }
