@@ -15,15 +15,17 @@
   min-block-size: 100dvb;
   background-color: #fff;
   background-image: var(--background-gradient);
-  background-size: 100% var(--gradient-height);
+  background-size: 100% auto;
+  background-attachment: fixed; 
   background-repeat: no-repeat;
   background-position: top center;
-  margin-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
   font-variation-settings: "wght" var(--font-weight-text);
+  padding: 0;
+  margin-bottom: 100px;   
 }
 
 .header {
@@ -61,7 +63,6 @@
   align-items: flex-start;
   width: var(--content-width);
   margin: 0 auto;  
-  background-color: #fff;
   font-family: var(--main-font);
 }
 
@@ -69,6 +70,7 @@
   margin-bottom: 50px;
   border: #000 2px solid; 
   overflow: visible;
+  background-color: #fff;
   box-sizing: border-box;
 }
 
@@ -250,6 +252,9 @@
 .save-dialog {
   display: none;
   padding: 0;
+  margin: auto;
+  box-sizing: border-box;
+  max-width: 353px;
 }
 
 .save-icon {
@@ -259,7 +264,9 @@
 }
 
 .save-dialog[open] {
-  width: clamp(341px, 80vw, 353px);
+  padding: 30px clamp(30px, calc(-0.94vw + 43.52px), 40px);
+  border: #000 2px solid;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -281,10 +288,10 @@
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  justify-content: center;
-  width: clamp(261px, 69vw, 293px);
-  margin: 30px 40px;
+  width: clamp(261px, 69vw, 293px); 
+  min-height: 63px;
   gap: 12px;
+  margin-bottom: 30px;
   line-height: 150%;
   padding: 0;
 }
@@ -293,17 +300,21 @@
   font-family: var(--accent-font);
   font-size: 14px;
   text-transform: uppercase;
+  margin-left: auto;
+  padding: 0;
+  line-height: 150%;
 }
 
 .dialog__button {
   width: clamp(261px, 69vw, 293px);
   height: 38px;
-  margin-bottom: 30px;
+  box-sizing: border-box;
 }
 
 .button:focus {
   outline: none;
   box-shadow: 2px 2px 0 #000;
+  box-sizing: border-box;
 }
 
 .button::before {
@@ -403,6 +414,10 @@
 }
 
 .like-icon {
+  transform-origin: center;
+}
+
+.like-icon .heart {
   transform-origin: center;
 }
 
